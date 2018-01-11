@@ -8,6 +8,8 @@ var path = require("path");
 
 var index = require('./routes/index');
 var result = require('./routes/result');
+var login = require('./routes/login');
+var signup = require('./routes/signup');
 
 var app = express();
 
@@ -22,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //setup route
 app.use('/',index);
 app.use('/result',result);
+app.use('/login',login);
+app.use('/signup',signup);
 
 //setup ejs
 app.set('view engine','ejs');
@@ -50,4 +54,3 @@ app.use(express.static(__dirname + "/public"));
 // });
 
 module.exports = app;
-
