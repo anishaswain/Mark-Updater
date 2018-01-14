@@ -1,6 +1,11 @@
-extends layout
-
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Error</title>
+  </head>
+  <body>
+    <h1><%=error.status%></h1>
+    <h3><%=error.message%></h3>
+  </body>
+</html>
