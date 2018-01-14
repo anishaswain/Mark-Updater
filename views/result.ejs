@@ -1,10 +1,3 @@
-<!-- <html>
-<body>
-    <p><%= results %></p>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,51 +11,50 @@
     <title>Mark Updater</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/stylish-portfolio.css" rel="stylesheet">
+    <link href="/css/stylish-portfolio.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
     <header>
-    	<h1 style="text-align: center;"><%= branch %><h1>
-      	
+    	<h1 style="text-align: center;"><%= branch %></h1>
+      <h2 style="text-align: center;"><%= subject %></h2>
     </header>
     <div class="container text-center my-auto mb-5">
         <table class="table table-hover" style="margin-top:10%">
 			  <thead>
 			    <tr>
 			      <th scope="col">#</th>
-			      <th scope="col">First</th>
-			      <th scope="col">Last</th>
-			      <th scope="col">Handle</th>
+			      <th scope="col">Regd No.</th>
+			      <th scope="col">Discipline</th>
+			      <th scope="col">Student No.</th>
+            <th scope="col">Subject Code</th>
+            <th scope="col">Subject Name</th>
+            <th scope="col">Sem</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>@mdo</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Jacob</td>
-			      <td>Thornton</td>
-			      <td>@fat</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td colspan="2">Larry the Bird</td>
-			      <td>@twitter</td>
-			    </tr>
+          <% for(var i = 0; i < results.length; i++){
+            var row = results[i];
+          %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= row['REGD_NO'] %></td>
+            <td><%= row['STREAM'] %></td>
+            <td><%= row['STUDENT_NO'] %></td>
+            <td><%= row['Sub_Code'] %></td>
+            <td><%= row['SUBJECT'] %></td>
+            <td><%= row['SEM'] %></td>
+          </tr>
+          <%}%>
 			  </tbody>
 		</table>
 
@@ -76,17 +68,16 @@
     </a>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="../js/stylish-portfolio.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="/js/stylish-portfolio.min.js"></script>
+    <script src="/js/main.js"></script>
 
   </body>
 
 </html>
-

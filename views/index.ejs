@@ -69,6 +69,19 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-10 mx-auto">
+            <fieldset class="inline-fields sem mb-5">
+                <h3>Select the Semester</h3>
+                    <div class = "row col-sm-12">
+                        <div class = "row col-sm-12 col-md-12">
+                            <select class="form-control" id="sem_select">
+                                <option selected disabled>Please Select the Semester</option>
+                                <% for(var i = 0; i < sems.length; i++) {%>
+                                  <option value="<%=sems[i]['SEM']%>"><%=sems[i]['SEM']%> Semester</option>
+                                <%}%>>
+                            </select>
+                        </div>
+                    </div>
+              </fieldset>
             <fieldset class="inline-fields branch">
                 <h3>Select the Branch</h3>
                   <div class = "row col-sm-12 mb-5">
@@ -83,18 +96,6 @@
                       </div>
                   </div>
             </fieldset>
-            <fieldset class="inline-fields sem mb-5">
-                <h3>Select the Semester</h3>
-                    <div class = "row col-sm-12">
-                        <div class = "row col-sm-12 col-md-12">
-                            <select class="form-control" id="column_select">
-                                <option selected disabled>Please Select the Semester</option>
-                                <option value="3">1st Semester</option>
-                                <option value="4">2nd Semester</option>
-                            </select>
-                        </div>
-                    </div>
-              </fieldset>
               <fieldset class="inline-fields subj mb-5">
                 <h3>Select the Subject</h3>
                     <div class = "row col-sm-12">
