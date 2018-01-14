@@ -39,7 +39,6 @@ app.set('views',__dirname+'/views')
 //set static files(css or js or imgs)
 app.use(express.static(__dirname + "/public"));
 
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
