@@ -17,13 +17,14 @@ router.get('/api/:sem/getbranch', function(req,res){
 		if(error){
 			console.log(error);
 		}else{
+			console.log(results);
 			res.send(results);
 		}
 	});
 });
 
-router.get('/api/:sem/:subj/getsubj', function(req,res){
-	var query = 'SELECT Subject FROM '+database.tablename+' WHERE Sem = "'+req.params.sem+'" GROUP BY Subject;';
+router.get('/api/:sem/:branch/getsubj', function(req,res){
+	var query = "Select Subject FROM "+database.tablename+" WHERE BRANCH = '" +req.params.branch+"' AND Sem = '"+req.params.sem+"' GROUP BY Subject;";
 	console.log(query)
 	database.connection.query(query, function(error,results,fields) {
 		if(error){
