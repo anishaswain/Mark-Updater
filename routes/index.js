@@ -11,7 +11,8 @@ router.get('/',function(req,res){
 });
 
 router.get('/api/:sem/getbranch', function(req,res){
-	var query = 'SELECT BRANCH FROM '+database.tablename+' WHERE SEM = "'+req.params.sem+'" GROUP BY BRANCH;';
+	var query = 'SELECT BRANCH FROM '+database.tablename+' WHERE Sem = "'+req.params.sem+'" GROUP BY BRANCH;';
+	console.log(query)
 	database.connection.query(query, function(error,results,fields) {
 		if(error){
 			console.log(error);
@@ -20,4 +21,18 @@ router.get('/api/:sem/getbranch', function(req,res){
 		}
 	});
 });
+
+router.get('/api/:sem/:subj/getsubj', function(req,res){
+	var query = 'SELECT Subject FROM '+database.tablename+' WHERE Sem = "'+req.params.sem+'" GROUP BY Subject;';
+	console.log(query)
+	database.connection.query(query, function(error,results,fields) {
+		if(error){
+			console.log(error);
+		}else{
+			console.log(results);
+			res.send(results);
+		}
+	});
+});
+
 module.exports = router;
