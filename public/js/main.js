@@ -28,25 +28,24 @@ $('#branch_select').on('change',function() {
     url : '/api/'+sem+'/'+branch+'/getsubj',
     dataType: 'json',
     success : function(data){
-      console.log(data[0]);
       var $el = $("#subject_select");
                     $el.empty(); // remove old options
                     $el.append($("<option></option>")
                             .attr("value", '').text('Please Select'));
                     $.each(data, function(value, key) {
                         $el.append($("<option></option>")
-                                .text(key.Subject));
+                                .attr("value",key.Sub_Code).text(key.Subject));
                     });                          
     }
   })
 })
 
 $('#searchbtn').on('click',function() {
-  var sem = $('#sem_select').val();
-  console.log(sem);
-  var branch = $('#branch_select').val();
-  console.log(branch);
-  var subject = $('#subject_select').val();
-  console.log(subject);
-  location.href = '/result/'+sem+'/'+branch+'/'+subject;
+      var sem = $('#sem_select').val();
+      console.log(sem);
+      var branch = $('#branch_select').val();
+      console.log(branch);
+      var subject = $('#subject_select').val();
+      console.log(subject);
+      location.href = '/result/'+sem+'/'+branch+'/'+subject;
 })

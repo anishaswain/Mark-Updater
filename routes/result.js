@@ -3,8 +3,8 @@ var database = require('../database.js');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/:sem/:branch/:subject', function(req, res, next) {
-  query = "Select * FROM "+database.tablename+" WHERE BRANCH = '" +req.params.branch+"' AND subject = '"+req.params.subject+"' AND sem = '"+req.params.sem+"';";
+router.get('/:sem/:branch/:sub_code', function(req, res, next) {
+  query = "Select * FROM "+database.tablename+" WHERE BRANCH = '" +req.params.branch+"' AND Sub_Code = '"+req.params.sub_code+"' AND sem = '"+req.params.sem+"';";
   database.connection.query(query,function(error,results,fields){
     if(error){
       console.log("Error found");

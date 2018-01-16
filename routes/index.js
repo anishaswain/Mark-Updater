@@ -24,7 +24,7 @@ router.get('/api/:sem/getbranch', function(req,res){
 });
 
 router.get('/api/:sem/:branch/getsubj', function(req,res){
-	var query = "Select Subject FROM "+database.tablename+" WHERE BRANCH = '" +req.params.branch+"' AND Sem = '"+req.params.sem+"' GROUP BY Subject;";
+	var query = "Select Subject,Sub_Code FROM "+database.tablename+" WHERE BRANCH = '" +req.params.branch+"' AND Sem = '"+req.params.sem+"' GROUP BY Subject,Sub_Code;";
 	console.log(query)
 	database.connection.query(query, function(error,results,fields) {
 		if(error){
