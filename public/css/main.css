@@ -1,7 +1,5 @@
 
 
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -118,11 +116,16 @@ textarea:-ms-input-placeholder { color: #1b3815;}
 button {
 	outline: none !important;
 	border: none;
-	background-color: #FFFF33;
+  color: #fff !important;
+  background-color: #0069d9 !important;
+  border-color: #0062cc !important;;
 }
 
 button:hover {
 	cursor: pointer;
+  color: #fff;
+  background-color: #155d74 !important;
+  border-color: #155d74 !important;
 }
 
 iframe {

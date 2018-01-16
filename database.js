@@ -4,11 +4,11 @@ var mysql = require("mysql");
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "omega160",
-  database: "test"
+  password: "Mumuli@10",
+  database: "testdb"
 });
 
-var tablename= "students";
+var tablename= "test";
 module.exports = {
   tablename : tablename,
   connection : con
