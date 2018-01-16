@@ -48,12 +48,5 @@ $('#searchbtn').on('click',function() {
   console.log(branch);
   var subject = $('#subject_select').val();
   console.log(subject);
-  $.ajax({
-      method : 'GET',
-      url : '/result/'+sem+'/'+branch+'/'+subject,
-      dataType: 'json',
-      success : function(data){
-        console.log(data);
-    }
-  })
+  location.href = '/result/'+sem+'/'+branch+'/'+subject;
 })
