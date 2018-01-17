@@ -9,3 +9,8 @@ router.get('/',function(req,res){
 	console.log("Got get request");
 	res.sendFile(path.join(__dirname,'../login.html'));
 });
+
+router.post('/', function(req,res){
+	console.log("Got post request");
+	console.log(req.body);
+});
