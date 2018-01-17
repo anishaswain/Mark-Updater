@@ -55,3 +55,17 @@ $('#searchbtn').on('click',function() {
 })
 
 
+$('#markbox').on('change',function() {
+  var redgno = $('#redgno').text();
+  var mark = $(this).val();
+  console.log(mark);
+  console.log(redgno);
+  $.ajax({
+    method : 'GET',
+    url : '/result/'+redgno+'/'+mark,
+    dataType: 'json',
+    success : function(data){
+                               
+    }
+  })
+})

@@ -298,3 +298,7 @@ a {
 table.table.table-hover {
     margin-top: -38%;
 }
+
+input[type="number"]{
+  width: 53px;
+}
