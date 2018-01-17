@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+
 $('#sem_select').on('change',function() {
   var sem = $(this).val();
   $.ajax({
@@ -49,3 +53,5 @@ $('#searchbtn').on('click',function() {
       console.log(subject);
       location.href = '/result/'+sem+'/'+branch+'/'+subject;
 })
+
+
