@@ -17,10 +17,10 @@ router.post('/', function(req,res,next){
 	// 	console.log("Connected!");
 	  var query= "INSERT INTO " + database.tablename1 +"(name, email, password) VALUES" + "('"+ req.body.name + "','" + req.body.email + "','" + req.body.password + "')";
 	  database.connection.query(query, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-  });
-	// });
-	console.log("post request received");
+	    if (err) throw err;
+	    console.log("1 record inserted");
+	  });
+		// });
+		console.log("post request received");
 });
 module.exports = router;
