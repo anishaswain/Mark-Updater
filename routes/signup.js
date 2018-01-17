@@ -15,8 +15,8 @@ router.post('/', function(req,res,next){
   //
 	// 	if (err) throw err;
 	// 	console.log("Connected!");
-	  var sql= "INSERT INTO "+ database.tablename1+ "(name, email, password)" +" VALUES "+"("+req.body.name+","+req.body.email+","+req.body.pass+")"+";";
-	  database.connection.query(sql, function (err, result) {
+	  var query= "INSERT INTO " + database.tablename1 +"(name, email, password) VALUES" + "('"+ req.body.name + "','" + req.body.email + "','" + req.body.password + "')";
+	  database.connection.query(query, function (err, result) {
     if (err) throw err;
     console.log("1 record inserted");
   });
