@@ -16,7 +16,7 @@ var database = require('./database.js');
 
 database.connection.connect(function(err) {
   if (err) throw err;
-  console.log("Databse is now connected!");
+  console.log("Database is now connected!");
 });
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
