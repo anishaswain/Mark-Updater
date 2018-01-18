@@ -56,7 +56,7 @@ $('#searchbtn').on('click',function() {
 
 
 $('.markbox').on('change',function() {
-  var redgno = $('#redgno').text();
+  var redgno = $(this).data('reg');
   var mark = $(this).val();
   console.log(mark);
   console.log(redgno);

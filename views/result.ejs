@@ -49,13 +49,13 @@
           %>
           <tr>
             <td><%= i+1 %></td>
-            <td id="redgno"><%= row['REGD_NO'] %></td>
+            <td><%= row['REGD_NO'] %></td>
             <td><%= row['STREAM'] %></td>
             <td><%= row['STUDENT_NO'] %></td>
             <td id="subcode"><%= row['Sub_Code'] %></td>
             <td><%= row['Subject'] %></td>
             <td><%= row['Sem'] %></td>
-            <td><input type="number" name="firstname" size="2" class="markbox"></td>
+            <td><input type="number" data-reg="<%= row['REGD_NO'] %>" name="firstname" size="2" class="markbox" value="<%= row['mark'] %>"></td>
           </tr>
           <%}%>
 			  </tbody>
