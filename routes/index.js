@@ -12,7 +12,7 @@ router.get('/',function(req,res){
 
 router.get('/api/:sem/getbranch', function(req,res){
 	var query = 'SELECT BRANCH FROM '+database.tablename+' WHERE Sem = "'+req.params.sem+'" GROUP BY BRANCH;';
-	console.log(query)
+	//console.log(query)
 	database.connection.query(query, function(error,results,fields) {
 		if(error){
 			console.log(error);
@@ -25,12 +25,12 @@ router.get('/api/:sem/getbranch', function(req,res){
 
 router.get('/api/:sem/:branch/getsubj', function(req,res){
 	var query = "Select Subject,Sub_Code FROM "+database.tablename+" WHERE BRANCH = '" +req.params.branch+"' AND Sem = '"+req.params.sem+"' GROUP BY Subject,Sub_Code;";
-	console.log(query)
+	//console.log(query)
 	database.connection.query(query, function(error,results,fields) {
 		if(error){
 			console.log(error);
 		}else{
-			console.log(results);
+			//console.log(results);
 			res.send(results);
 		}
 	});

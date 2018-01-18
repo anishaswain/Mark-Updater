@@ -70,40 +70,42 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <fieldset class="inline-fields sem mb-5">
-                <h3>Select the Semester</h3>
-                    <div class = "row col-sm-12">
-                        <div class = "row col-sm-12 col-md-12">
-                            <select class="form-control" id="sem_select">
-                                <option selected disabled>Please Select the Semester</option>
-                                <% for(var i = 0; i < sems.length; i++) {%>
-                                  <option value="<%=sems[i]['SEM']%>"><%=sems[i]['SEM']%> Semester</option>
-                                <%}%>>
-                            </select>
+            <form method="POST" action="/result">
+                <fieldset class="inline-fields sem mb-5">
+                    <h3>Select the Semester</h3>
+                        <div class = "row col-sm-12">
+                            <div class = "row col-sm-12 col-md-12">
+                                <select class="form-control" id="sem_select" name="sem_select">
+                                    <option selected disabled>Please Select the Semester</option>
+                                    <% for(var i = 0; i < sems.length; i++) {%>
+                                      <option value="<%=sems[i]['SEM']%>" id="semid" name="semid"><%=sems[i]['SEM']%> Semester</option>
+                                    <%}%>>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-              </fieldset>
-            <fieldset class="inline-fields branch">
-                <h3>Select the Branch</h3>
-                  <div class = "row col-sm-12 mb-5">
-                      <div class = "row col-sm-12 col-md-12">
-                          <select class="form-control" id="branch_select">
-                            <option selected disabled>Please Select the Branch</option>
-                          </select>
+                  </fieldset>
+                <fieldset class="inline-fields branch">
+                    <h3>Select the Branch</h3>
+                      <div class = "row col-sm-12 mb-5">
+                          <div class = "row col-sm-12 col-md-12">
+                              <select class="form-control" id="branch_select" name="branch_select">
+                                <option selected disabled>Please Select the Branch</option>
+                              </select>
+                          </div>
                       </div>
-                  </div>
-            </fieldset>
-              <fieldset class="inline-fields subj mb-5">
-                <h3>Select the Subject</h3>
-                    <div class = "row col-sm-12">
-                        <div class = "row col-sm-12 col-md-12">
-                            <select class="form-control" id="subject_select">
-                              <option selected disabled>Please Select the Subject</option>
-                            </select>
+                </fieldset>
+                  <fieldset class="inline-fields subj mb-5">
+                    <h3>Select the Subject</h3>
+                        <div class = "row col-sm-12">
+                            <div class = "row col-sm-12 col-md-12">
+                                <select class="form-control" id="subject_select" name="subject_select">
+                                  <option selected disabled>Please Select the Subject</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-              </fieldset>
-            <a class="btn btn-primary btn-lg js-scroll-trigger" id="searchbtn">Search</a>
+                  </fieldset>
+                <button class="btn btn-primary btn-lg js-scroll-trigger" id="searchbtn">Search</button>
+              </form>
           </div>
         </div>
       </div>

@@ -44,15 +44,15 @@ $('#branch_select').on('change',function() {
   })
 })
 
-$('#searchbtn').on('click',function() {
-      var sem = $('#sem_select').val();
-      console.log(sem);
-      var branch = $('#branch_select').val();
-      console.log(branch);
-      var subject = $('#subject_select').val();
-      console.log(subject);
-      location.href = '/result/'+sem+'/'+branch+'/'+subject;
-})
+// $('#searchbtn').on('click',function() {
+//       var sem = $('#sem_select').val();
+//       console.log(sem);
+//       var branch = $('#branch_select').val();
+//       console.log(branch);
+//       var subject = $('#subject_select').val();
+//       console.log(subject);
+//       location.href = '/result/'+sem+'/'+branch+'/'+subject;
+// })
 
 
 $('.markbox').on('change',function() {
