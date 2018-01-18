@@ -14,18 +14,17 @@ router.get('/:sem/:branch/:sub_code', function(req, res, next) {
      //
   });
 });
-
-router.get('/:redg/:mark', function(req, res, next) {
-  console.log(req.params.mark);
-  con.connect(function(err) {
-  if (err) throw err;
-  var query = "UPDATE"+ database.tablename + "SET mark = '"+req.params.mark+"' WHERE REGD_NO = '"+req.params.redg+"'";
-  con.query(query, function (err, result) {
-    if (err) throw err;
-    console.log(result.affectedRows + " record(s) updated");
-  });
-});
  
+router.get('/:redg/:mark', function(req, res, next) {
+  var query = "UPDATE "+ database.tablename + " SET mark = '"+req.params.mark+"' WHERE REGD_NO = '"+req.params.redg+"';";
+  console.log(query);
+  database.connection.query(query, function (err, results, fields) {
+    if (err){ 
+      throw err;
+    }else{
+    console.log(results.affectedRows + " record(s) updated");
+    res.send(results)}
+  });
 });
 
 module.exports = router;
