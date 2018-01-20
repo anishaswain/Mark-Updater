@@ -17,7 +17,6 @@ router.get('/api/:sem/getbranch', function(req,res){
 		if(error){
 			console.log(error);
 		}else{
-			console.log(results);
 			res.send(results);
 		}
 	});

@@ -22,13 +22,31 @@ router.post('/',function(req,res,next){
   console.log(req.body.sem_select);
   console.log(req.body.branch_select);
   console.log(req.body.subject_select);
-  if(!req.body.sem_select & !req.body.branch_select & req.body.subject_select){
-    //res.status(502).send('Insufficient field values');
-    res.send("enter some data/empty fields are present");
-  }else{
-    console.log("abcd")
+  console.log(req.body);
+  var s = "Select * FROM "+database.tablename+" WHERE "
+  console.log(s);
+  if(req.body.sem_select){
+    s = s+"SEM = '" +req.body.sem_select+"' AND "
   }
-});
+  if(req.body.branch_select){
+    s = s+"BRANCH = '" +req.body.branch_select+"' AND "
+  }
+  if(req.body.subject_select){
+    s = s+"Sub_Code = '" +req.body.subject_select + "' AND'"
+  }
+  //s = s .slice(-3);
+  s = s.slice(0, -5 );
+  s = s + ';'
+  console.log(s);
+  // database.connection.query(s,function(error,results,fields){
+  //   if(error){
+  //     console.log("Error found");
+  //   }else{
+  //     res.render('result',{results:results, branch:req.params.branch, subject:req.params.subject});
+  //   }
+  //    //
+  // });
+});;
  
 router.get('/:redg/:mark', function(req, res, next) {
   var query = "UPDATE "+ database.tablename + " SET mark = '"+req.params.mark+"' WHERE REGD_NO = '"+req.params.redg+"';";
