@@ -9,7 +9,10 @@ router.get('/',function(req,res){
 		var sems = results;
 		database.connection.query('SELECT DISTINCT BRANCH FROM '+database.tablename+' ORDER BY BRANCH ASC;', function(error,results,fields) {
 			var branches = results;
-			res.render('index',{'sems' : sems, 'branches' : branches});
+				database.connection.query('SELECT DISTINCT Subject FROM '+database.tablename+' ORDER BY Subject ASC;', function(error,results,fields) {
+					var subjects = results;
+					console.log(Subjects)
+			res.render('index',{'sems' : sems, 'branches' : branches, 'subjects' : subjects});
 		});
 	});
 });

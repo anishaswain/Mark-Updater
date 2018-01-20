@@ -103,6 +103,9 @@
                             <div class = "row col-sm-12 col-md-12">
                                 <select class="form-control" id="subject_select" name="subject_select">
                                   <option selected disabled>Please Select the Subject</option>
+                                  <% for(var i = 0; i < subjects.length; i++) {%>
+                                  <option value="<%=subjects[i]['Subject']%>" id="subjectid" name="subjectid"><%=subjects[i]['Subject']%></option>
+                                  <%}%>>
                                 </select>
                             </div>
                         </div>

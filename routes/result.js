@@ -22,9 +22,7 @@ router.post('/',function(req,res,next){
   console.log(req.body.sem_select);
   console.log(req.body.branch_select);
   console.log(req.body.subject_select);
-  console.log(req.body);
   var s = "Select * FROM "+database.tablename+" WHERE "
-  console.log(s);
   if(req.body.sem_select){
     s = s+"SEM = '" +req.body.sem_select+"' AND "
   }
@@ -32,7 +30,7 @@ router.post('/',function(req,res,next){
     s = s+"BRANCH = '" +req.body.branch_select+"' AND "
   }
   if(req.body.subject_select){
-    s = s+"Sub_Code = '" +req.body.subject_select + "' AND'"
+    s = s+"subject = '" +req.body.subject_select + "' AND'"
   }
   //s = s .slice(-3);
   s = s.slice(0, -5 );
