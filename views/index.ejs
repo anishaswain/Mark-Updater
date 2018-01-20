@@ -90,6 +90,9 @@
                           <div class = "row col-sm-12 col-md-12">
                               <select class="form-control" id="branch_select" name="branch_select">
                                 <option selected disabled>Please Select the Branch</option>
+                                <% for(var i = 0; i < branches.length; i++) {%>
+                                  <option value="<%=branches[i]['BRANCH']%>" id="branchid" name="branchid"><%=branches[i]['BRANCH']%></option>
+                                <%}%>>
                               </select>
                           </div>
                       </div>

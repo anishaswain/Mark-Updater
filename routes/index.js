@@ -5,15 +5,18 @@ var path = require("path");
 var database = require('../database.js');
 /* GET home page. */
 router.get('/',function(req,res){
-	database.connection.query('SELECT SEM,BRANCH FROM '+database.tablename+' GROUP BY SEM,BRANCH;', function(error,results,fields) {
-		//res.render('index',{sems : results});
-		res.send(results)
+	database.connection.query('SELECT DISTINCT SEM FROM '+database.tablename+' ORDER BY SEM ASC;', function(error,results,fields) {
+		var sems = results;
+		database.connection.query('SELECT DISTINCT BRANCH FROM '+database.tablename+' ORDER BY BRANCH ASC;', function(error,results,fields) {
+			var branches = results;
+			res.render('index',{'sems' : sems, 'branches' : branches});
+		});
 	});
 });
 
 router.get('/api/:sem/getbranch', function(req,res){
 	var query = 'SELECT BRANCH FROM '+database.tablename+' WHERE Sem = "'+req.params.sem+'" GROUP BY BRANCH;';
-	//console.log(query)n 
+	//console.log(query)n
 	database.connection.query(query, function(error,results,fields) {
 		if(error){
 			console.log(error);
