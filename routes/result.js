@@ -38,14 +38,14 @@ router.post('/',function(req,res,next){
   s = s.slice(0, -5 );
   s = s + ';'
   console.log(s);
-  // database.connection.query(s,function(error,results,fields){
-  //   if(error){
-  //     console.log("Error found");
-  //   }else{
-  //     res.render('result',{results:results, branch:req.params.branch, subject:req.params.subject});
-  //   }
-  //    //
-  // });
+  database.connection.query(s,function(error,results,fields){
+    if(error){
+      console.log("Error found");
+    }else{
+      res.render('result',{results:results, branch:req.body.branch_select, subject:req.body.subject_select});
+    }
+     //
+  });
 });;
  
 router.get('/:redg/:mark', function(req, res, next) {
