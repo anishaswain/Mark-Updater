@@ -11,10 +11,11 @@ router.get('/',function(req,res){
 			var branches = results;
 				database.connection.query('SELECT DISTINCT Subject FROM '+database.tablename+' ORDER BY Subject ASC;', function(error,results,fields) {
 					var subjects = results;
-					console.log(Subjects)
+					console.log(subjects)
 			res.render('index',{'sems' : sems, 'branches' : branches, 'subjects' : subjects});
 		});
 	});
+});
 });
 
 router.get('/api/:sem/getbranch', function(req,res){
